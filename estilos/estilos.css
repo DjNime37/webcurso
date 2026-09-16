@@ -1,0 +1,731 @@
+/* ==========================================
+   ESTILOS GENERALES, ESTRUCTURA Y TEXTOS
+   ========================================== */
+
+/* Elimina las flechas del campo de cantidad. */
+
+body {
+   font: 16px/1.6 Arial, Helvetica, sans-serif;
+   /* Define el tipo de letra, el tamaño de 16px y la altura de línea de 1.6. */
+   color: #222;
+   /* Define el color predeterminado de los textos. */
+   background: #f4f6f8;
+   /* Define el color de fondo de toda la página. */
+   margin: 0;
+   /* Elimina el margen exterior que el navegador añade por defecto. */
+}
+
+/* Afecta a los elementos que tengan class="content-container".
+   HTML: <div class="content-container">...</div>
+   QUÉ HACE: limita el ancho del contenido, lo centra y añade espacio interior a los lados. */
+.content-container {
+   max-width: 900px;
+   /* Establece 900px como ancho máximo del contenido. */
+   margin: 0 auto;
+   /* Elimina el margen vertical y centra horizontalmente el contenido. */
+   padding: 0 15px;
+   /* Añade 15px de espacio interior a izquierda y derecha. */
+}
+
+/* Afecta a todos los párrafos.
+   HTML: <p>...</p>
+   QUÉ HACE: establece el tamaño y el color del texto de los párrafos. */
+p {
+   font-size: 16px;
+   /* Establece el tamaño de letra en 16px. */
+   color: #444;
+   /* Establece el color del texto en gris oscuro. */
+}
+
+/* Afecta a los textos marcados con <strong>.
+   HTML: <strong>...</strong>
+   QUÉ HACE: cambia el color de esos textos. */
+strong {
+   color: #111;
+   /* Establece el color del texto en un gris muy oscuro. */
+}
+
+/* Afecta a los enlaces <a> que estén dentro de <main>.
+   HTML: <main><a href="...">...</a></main>
+   QUÉ HACE: cambia el color de esos enlaces, elimina su subrayado y hace que los cambios de estilo sean progresivos. */
+main a {
+   color: #0066cc;
+   /* Establece el color del enlace en azul. */
+   text-decoration: none;
+   /* Elimina el subrayado del enlace. */
+   transition: .3s;
+   /* Hace que los cambios de estilo se produzcan progresivamente durante 0,3 segundos. */
+}
+
+/* Afecta a los enlaces <a> dentro de <main> cuando el ratón pasa por encima.
+   HTML: <main><a href="...">...</a></main>
+   QUÉ HACE: cambia el enlace a color naranja y le añade un subrayado al pasar el ratón por encima.
+   :hover es un estado CSS. */
+main a:hover {
+   color: #ff4d00;
+   /* Cambia el color del enlace a naranja al pasar el ratón por encima. */
+   text-decoration: underline;
+   /* Añade un subrayado al enlace al pasar el ratón por encima. */
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN Y AUTENTICACIÓN
+   ========================================== */
+
+/* Afecta a los elementos que tengan class="usuario-acceso".
+   HTML: <div class="usuario-acceso">...</div>
+   QUÉ HACE: coloca los elementos de acceso del usuario en una fila, los alinea verticalmente y deja 15px de separación entre ellos. */
+.usuario-acceso {
+   display: flex;
+   /* Convierte el elemento en un contenedor flexible para poder organizar sus elementos internos. */
+   align-items: center;
+   /* Alinea verticalmente los elementos internos en el centro. */
+   gap: 15px;
+   /* Deja 15px de separación entre los elementos internos. */
+}
+
+/* Afecta a los elementos que tengan class="login-link".
+   HTML: <a class="login-link" href="...">...</a>
+   QUÉ HACE: da formato al enlace de inicio de sesión y organiza su contenido interior. */
+.login-link {
+   display: inline-flex;
+   /* Hace que el enlace se comporte como un elemento en línea y, al mismo tiempo, permite organizar su contenido con Flexbox. */
+   align-items: center;
+   /* Centra verticalmente los elementos que estén dentro del enlace. */
+   gap: 6px;
+   /* Deja 6px de separación entre los elementos internos, por ejemplo entre un icono y el texto. */
+   color: #fff;
+   /* Establece el color del texto en blanco. */
+   text-decoration: none;
+   /* Elimina el subrayado habitual de los enlaces. */
+   font-size: 14px;
+   /* Establece el tamaño del texto en 14px. */
+   font-weight: 500;
+   /* Establece un grosor de letra intermedio. */
+   transition: color 0.3s ease;
+   /* Hace que el cambio de color dure 0,3 segundos y se produzca de forma progresiva. */
+}
+
+/* Afecta al enlace .login-link cuando el ratón pasa por encima.
+   HTML: es el mismo <a class="login-link">...</a>.
+   QUÉ HACE: cambia el color del enlace a naranja al pasar el ratón por encima y mantiene el enlace sin subrayado.
+   :hover es un estado CSS. */
+.login-link:hover {
+   color: #ff4d00;
+   /* Cambia el color del texto a naranja cuando el ratón pasa por encima. */
+   text-decoration: none;
+   /* Mantiene eliminado el subrayado del enlace. */
+}
+
+/* Afecta a los elementos que tengan class="icon-usuario".
+   HTML: por ejemplo <span class="icon-usuario">...</span>
+   QUÉ HACE: establece el tamaño del icono de usuario. */
+.icon-usuario {
+   font-size: 1rem;
+   /* Establece el tamaño del icono en 1rem, que normalmente equivale al tamaño de fuente establecido para ese elemento o su contexto. */
+}
+
+/* Afecta a los elementos que tengan class="btn-registro".
+   HTML: <a class="btn-registro" href="crearcuenta.html">...</a>
+   QUÉ HACE: da apariencia de botón al enlace de registro, aplicando color de fondo, texto, espacio interior, bordes redondeados y tamaño de letra. */
+.btn-registro {
+   background-color: #ff4d00;
+   /* Establece el fondo del botón en naranja. */
+   color: #fff !important;
+   /* Establece el texto en blanco. !important hace que esta regla tenga prioridad sobre otras reglas que intenten cambiar ese color. */
+   padding: 6px 16px;
+   /* Añade 6px de espacio interior arriba y abajo y 16px a izquierda y derecha. */
+   border-radius: 20px;
+   /* Redondea las esquinas del botón. */
+   font-size: 14px;
+   /* Establece el tamaño del texto en 14px. */
+   font-weight: 600;
+   /* Hace que el texto tenga un grosor mayor que el normal. */
+   text-decoration: none;
+   /* Elimina el subrayado del enlace. */
+   transition: background-color 0.3s ease, transform 0.2s ease;
+   /* Hace progresivos durante 0,3 y 0,2 segundos los cambios de fondo y posición respectivamente. */
+}
+
+/* Afecta al botón .btn-registro cuando el ratón pasa por encima.
+   HTML: es el mismo <a class="btn-registro">...</a>.
+   QUÉ HACE: cambia el fondo a un naranja más oscuro y desplaza ligeramente el botón hacia arriba.
+   :hover es un estado CSS. */
+.btn-registro:hover {
+   background-color: #e04300;
+   /* Cambia el fondo a un naranja más oscuro al pasar el ratón por encima. */
+   text-decoration: none;
+   /* Mantiene eliminado el subrayado. */
+   transform: translateY(-1px);
+   /* Desplaza el botón 1px hacia arriba. */
+}
+
+/* Ajuste responsive para la navegación móvil.
+   QUÉ HACE: estas reglas solamente se aplican cuando el ancho de la ventana es como máximo 991.98px.
+   @media permite adaptar el diseño a diferentes tamaños de pantalla. */
+@media (max-width: 991.98px) {
+
+   /* Afecta a los elementos con class="usuario-acceso".
+       HTML: <div class="usuario-acceso">...</div>
+       QUÉ HACE: añade espacio y una línea superior cuando la navegación está en una pantalla pequeña. */
+   .usuario-acceso {
+      margin-top: 15px;
+      /* Añade 15px de margen exterior por encima del elemento. */
+      padding-top: 15px;
+      /* Añade 15px de espacio interior por encima del contenido. */
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      /* Añade una línea de 1px en la parte superior, de color blanco con una transparencia del 90%. */
+      justify-content: flex-start;
+      /* Coloca los elementos internos empezando desde el principio de la fila. */
+   }
+}
+
+/* ==========================================
+   BANNERS DE PUBLICIDAD FLOTANTES
+   ========================================== */
+
+/* Afecta a los elementos que tengan class="banner-publicidad".
+   HTML: <div ... class="banner-publicidad">...</div>
+   QUÉ HACE: convierte el banner en un elemento flotante que permanece en una posición fija de la pantalla, le da fondo blanco, bordes redondeados, sombra y aspecto de elemento sobre el contenido. */
+.banner-publicidad {
+   position: fixed;
+   /* Mantiene el banner fijo respecto a la ventana del navegador, aunque se haga scroll. */
+   left: 10px;
+   /* Coloca el banner a 10px del borde izquierdo de la ventana. */
+   top: 20%;
+   /* Coloca la parte superior del banner al 20% de la altura de la ventana. */
+   transform: translateY(-50%);
+   /* Baja el banner hacia arriba el 50% de su propia altura para centrarlo verticalmente respecto a la posición indicada. */
+   z-index: 1050;
+   /* Coloca el banner por encima de elementos con un z-index inferior. */
+   background: #fff;
+   /* Establece el fondo del banner en blanco. */
+   border-radius: 8px;
+   /* Redondea las esquinas del banner 8px. */
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+   /* Añade una sombra alrededor del banner. */
+   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+   /* Hace progresivos durante 0,4 y 0,3 segundos los cambios de posición y transparencia. */
+   cursor: pointer;
+   /* Hace que el cursor del ratón adopte forma de mano al pasar por encima. */
+}
+
+/* Afecta a los elementos que tengan class="banner-segundo".
+   HTML: <div class="banner-publicidad banner-segundo">...</div>
+   QUÉ HACE: modifica la posición vertical del segundo banner para colocarlo más abajo que el primero. */
+.banner-segundo {
+   top: calc(18% + 180px);
+   /* Coloca el banner a un 18% de la altura de la ventana más 180px. calc() permite realizar esta operación combinando diferentes unidades. */
+}
+
+/* Afecta a las imágenes que estén dentro de un elemento con class="banner-publicidad".
+   HTML: <div class="banner-publicidad"><img src="..." alt="..."></div>
+   QUÉ HACE: establece el tamaño, la forma de visualización y los bordes redondeados de la imagen del banner. */
+.banner-publicidad img {
+   width: 140px;
+   /* Establece el ancho de la imagen en 140px. */
+   height: auto;
+   /* Mantiene automáticamente la proporción original de la imagen. */
+   display: block;
+   /* Hace que la imagen se comporte como un elemento de bloque. */
+   border-radius: 8px;
+   /* Redondea las esquinas de la imagen. */
+}
+
+/* Afecta a los elementos que tengan class="cerrar-banner".
+   HTML: <button class="cerrar-banner" type="button">✕</button>
+   QUÉ HACE: crea el aspecto del botón circular de cerrar que aparece sobre el banner. */
+.cerrar-banner {
+   position: absolute;
+   /* Permite colocar el botón en una posición concreta respecto al banner. */
+   top: -8px;
+   /* Coloca el botón 8px por encima del borde superior del banner. */
+   right: -8px;
+   /* Coloca el botón 8px hacia fuera del borde derecho del banner. */
+   background: #222;
+   /* Establece el fondo del botón en gris muy oscuro. */
+   color: #fff;
+   /* Establece el color de la X en blanco. */
+   border: none;
+   /* Elimina el borde predeterminado del botón. */
+   border-radius: 50%;
+   /* Convierte el botón en circular. */
+   width: 22px;
+   /* Establece el ancho del botón en 22px. */
+   height: 22px;
+   /* Establece la altura del botón en 22px. */
+   font-size: 12px;
+   /* Establece el tamaño de la X en 12px. */
+   cursor: pointer;
+   /* Hace que el cursor se convierta en una mano al pasar por encima. */
+   display: flex;
+   /* Permite organizar el contenido del botón mediante Flexbox. */
+   align-items: center;
+   /* Centra verticalmente la X dentro del botón. */
+   justify-content: center;
+   /* Centra horizontalmente la X dentro del botón. */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+   /* Añade una sombra alrededor del botón. */
+   z-index: 1060;
+   /* Coloca el botón por encima del propio banner. */
+}
+
+/* Afecta al botón .cerrar-banner cuando el ratón pasa por encima.
+   HTML: <button class="cerrar-banner">✕</button>
+   QUÉ HACE: cambia el fondo del botón a naranja al pasar el ratón por encima. */
+.cerrar-banner:hover {
+   background: #ff4d00;
+   /* Cambia el fondo del botón a naranja." .cerrar-banner:hover { */
+}
+
+/* Afecta a un elemento que tenga simultáneamente class="banner-publicidad" y class="plegado".
+   HTML: <div class="banner-publicidad plegado">...</div>
+   QUÉ HACE: desplaza el banner hacia la izquierda y reduce ligeramente su opacidad cuando está plegado.
+   La clase "plegado" se añade mediante JavaScript. */
+.banner-publicidad.plegado {
+   transform: translateY(-50%) translateX(-85%);
+   /* Mantiene el desplazamiento vertical y mueve el banner un 85% de su propio ancho hacia la izquierda. */
+   opacity: 0.85;
+   /* Hace que el banner sea ligeramente transparente. */
+}
+
+/* Afecta al banner cuando tiene las clases .banner-publicidad y .plegado y el ratón pasa por encima.
+   HTML: <div class="banner-publicidad plegado">...</div>
+   QUÉ HACE: hace que el banner vuelva a verse completamente opaco cuando el ratón pasa por encima. */
+.banner-publicidad.plegado:hover {
+   opacity: 1;
+   /* Elimina la transparencia y muestra el banner con opacidad completa. */
+}
+
+/* Afecta al botón .cerrar-banner cuando está dentro de un banner que tiene las clases .banner-publicidad y .plegado.
+   HTML: <div class="banner-publicidad plegado"><button class="cerrar-banner">✕</button></div>
+   QUÉ HACE: oculta el botón de cerrar mientras el banner está plegado. */
+.banner-publicidad.plegado .cerrar-banner {
+   display: none;
+   /* Oculta completamente el botón de cerrar. */
+}
+
+/* ==========================================
+   CARDS DE LOS REPRODUCTORES MP4
+   ========================================== */
+
+/* Afecta a los párrafos <p> que están dentro de un elemento con la clase .promo-banner.
+   HTML: <div class="promo-banner"><p>...</p></div>
+   QUÉ HACE: elimina el margen exterior del párrafo. */
+.promo-banner p {
+   margin: 0;
+   /* Elimina el margen exterior del <p>. */
+}
+
+/* Afecta a los elementos con la clase .card.
+   HTML: <div class="card">...</div>
+   QUÉ HACE: da forma y apariencia general a las tarjetas de los productos. */
+.card {
+   border: none;
+   /* Elimina el borde de la tarjeta. */
+   border-radius: 12px;
+   /* Redondea las esquinas de la tarjeta 12px. */
+   overflow: hidden;
+   /* Oculta cualquier contenido que sobresalga de los límites de la tarjeta. */
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   /* Hace progresivos durante 0,3 segundos los cambios de posición y sombra. */
+}
+
+/* Afecta a los elementos .card cuando el ratón pasa por encima.
+   HTML: <div class="card">...</div>
+   QUÉ HACE: eleva visualmente la tarjeta y añade una sombra al pasar el ratón.
+   :hover es un estado CSS. */
+.card:hover {
+   transform: translateY(-5px);
+   /* Mueve la tarjeta 5px hacia arriba al pasar el ratón por encima. */
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+   /* Añade una sombra alrededor de la tarjeta al pasar el ratón por encima. */
+}
+
+/* Imágenes de los reproductores */
+/* Afecta a los elementos con la clase .card-img-top.
+   HTML: normalmente <img class="card-img-top" src="...">
+   QUÉ HACE: establece el tamaño y la forma en que se muestran las imágenes de los reproductores dentro de la tarjeta. */
+.card-img-top {
+   height: 260px;
+   /* Establece una altura fija de 260px para la imagen. */
+   object-fit: contain;
+   /* Hace que la imagen completa quepa dentro del espacio sin deformarse. */
+   padding: 15px;
+   /* Añade 15px de espacio interior alrededor de la imagen. */
+   background-color: #fff;
+   /* Establece el fondo blanco del área de la imagen. */
+   border-radius: 20px;
+   /* Redondea las esquinas del área de la imagen. */
+}
+
+/* Título */
+/* Afecta a los elementos con la clase .card-title.
+   HTML: normalmente <h5 class="card-title">...</h5>
+   QUÉ HACE: centra el título y deja espacio debajo de él. */
+.card-title {
+   text-align: center;
+   /* Centra horizontalmente el texto del título. */
+   margin-bottom: 12px;
+   /* Añade 12px de espacio exterior debajo del título. */
+}
+
+/* Descripción */
+/* Afecta a los elementos con la clase .card-text.
+   HTML: normalmente <p class="card-text">...</p>
+   QUÉ HACE: establece el espacio vertical entre las líneas de la descripción. */
+.card-text {
+   line-height: 1.5;
+   /* Establece la altura de cada línea en 1,5 veces el tamaño de la fuente. */
+}
+
+/* Precio */
+/* Afecta a los elementos <h5> que tienen simultáneamente las clases .card-body y .text-primary en su elemento padre.
+   HTML: <div class="card-body"><h5 class="text-primary">...</h5></div>
+   QUÉ HACE: modifica el aspecto del precio, poniéndolo azul, en negrita y con espacio inferior. */
+.card-body h5.text-primary {
+   color: #0066cc !important;
+   /* Cambia el color del precio a azul. */
+   font-weight: 700;
+   /* Hace que el texto del precio aparezca en negrita. */
+   margin-bottom: 10px;
+   /* Añade 10px de espacio exterior debajo del precio. */
+}
+
+/* ==========================================
+   CARRUSEL
+   ========================================== */
+
+/* Afecta al elemento que tiene el id="carouselExampleIndicators".
+   HTML: <div id="carouselExampleIndicators" class="carousel slide">...</div>
+   QUÉ HACE: limita el ancho máximo del carrusel y lo centra horizontalmente.
+   #carouselExampleIndicators es un selector por ID. */
+#carouselExampleIndicators {
+   max-width: 450px;
+   /* Establece un ancho máximo de 450px para el carrusel. */
+   margin: 0 auto;
+   /* Elimina el margen vertical y centra horizontalmente el carrusel. */
+}
+
+/* Afecta a las imágenes <img> que están dentro de los elementos con la clase .carousel-item,
+   que a su vez están dentro del elemento con el ID #carouselExampleIndicators.
+   HTML: <div id="carouselExampleIndicators"><div class="carousel-item"><img src="..."></div></div>
+   QUÉ HACE: establece el tamaño y la forma en que se muestran las imágenes del carrusel. */
+#carouselExampleIndicators .carousel-item img {
+   width: 100%;
+   /* Hace que la imagen ocupe todo el ancho disponible del elemento que la contiene. */
+   height: 300px;
+   /* Establece una altura fija de 300px para la imagen. */
+   object-fit: contain;
+   /* Hace que la imagen completa quepa dentro de ese espacio sin deformarse. */
+   display: block;
+   /* Hace que la imagen se comporte como un elemento de bloque. */
+}
+
+/* ==========================================
+   FOOTER, FORMULARIOS Y ESTADOS
+   ========================================== */
+
+/* Afecta a los elementos con las clases .form-control que están dentro del <footer>.
+   HTML: <footer><input class="form-control">...</footer>
+   QUÉ HACE: modifica el aspecto de los campos de formulario del footer. */
+
+footer .form-control {
+   background: #f1f1f1;
+   /* Establece un fondo gris claro para el campo. */
+   color: #333;
+   /* Establece el color del texto del campo en gris oscuro. */
+   border: 1px solid #ccc;
+   /* Añade un borde de 1px de grosor y color gris claro. */
+   border-radius: 6px;
+   /* Redondea las esquinas del campo 6px. */
+   width: 100%;
+   /* Hace que el campo ocupe el 100% del ancho disponible. */
+}
+
+/* Afecta específicamente a los elementos <textarea> que tienen la clase .form-control
+   dentro del <footer>.
+   HTML: <footer><textarea class="form-control"></textarea></footer>
+   QUÉ HACE: permite cambiar verticalmente el tamaño del área de texto. */
+footer textarea.form-control {
+   resize: vertical;
+   /* Permite al usuario aumentar o reducir el tamaño del textarea solamente en vertical. */
+}
+
+/* Afecta a los elementos con la clase .text-secondary que están dentro del <footer>.
+   HTML: <footer><a class="text-secondary">...</a></footer>
+   QUÉ HACE: hace progresivos los cambios de color de estos elementos. */
+footer .text-secondary {
+   transition: color .3s;
+   /* Hace que los cambios de color duren 0,3 segundos de forma progresiva. */
+}
+
+/* Afecta a los enlaces <a> con la clase .text-secondary cuando el ratón pasa por encima,
+   siempre que estén dentro del <footer>.
+   HTML: <footer><a class="text-secondary" href="...">...</a></footer>
+   QUÉ HACE: cambia el enlace a color blanco y le añade un subrayado al pasar el ratón.
+   :hover es un estado CSS. */
+footer a.text-secondary:hover {
+   color: #fff !important;
+   /* Cambia el color del enlace a blanco al pasar el ratón por encima. */
+   text-decoration: underline !important;
+   /* Añade un subrayado al enlace al pasar el ratón por encima. */
+}
+
+/* Afecta a cualquier elemento deshabilitado que esté dentro del <footer>.
+   HTML: <footer><input disabled>...</footer>
+   QUÉ HACE: modifica el aspecto de los elementos que están deshabilitados.
+   :disabled es un estado CSS que se aplica cuando un elemento de formulario tiene el atributo HTML disabled. */
+footer :disabled {
+   background: #ececec !important;
+   /* Establece un fondo gris claro para el elemento deshabilitado. */
+   color: #999 !important;
+   /* Cambia el color del texto a gris. */
+   cursor: not-allowed;
+   /* Cambia el cursor para indicar que el elemento no se puede utilizar. */
+   opacity: 0.6;
+   /* Reduce la opacidad del elemento, haciendo que se vea más apagado. */
+}
+
+/* ==========================================
+   RESPONSIVIDAD
+   ========================================== */
+
+/* Afecta a las reglas que están dentro de @media.
+   QUÉ HACE: cambia determinados estilos cuando la pantalla tiene un ancho máximo de 768px.
+   Esto permite adaptar la página a móviles y pantallas pequeñas.
+   @media es una regla CSS para aplicar estilos dependiendo de las características de la pantalla. */
+@media (max-width: 768px) {
+
+   /* Afecta a los elementos con la clase .promo-banner.
+       HTML: <div class="promo-banner">...</div>
+       QUÉ HACE: coloca sus elementos en columna y centra el contenido cuando la pantalla es pequeña. */
+   .promo-banner {
+      flex-direction: column;
+      /* Coloca los elementos del contenedor uno debajo de otro. */
+      gap: 10px;
+      /* Deja 10px de separación entre los elementos. */
+      text-align: center;
+      /* Centra horizontalmente el texto. */
+   }
+
+   /* Afecta a los elementos con la clase .banner-publicidad.
+       HTML: <div class="banner-publicidad">...</div>
+       QUÉ HACE: oculta los banners publicitarios en pantallas pequeñas. */
+   .banner-publicidad {
+      display: none;
+      /* Hace que los banners no se muestren. */
+   }
+
+   /* Afecta a las imágenes con la clase .card-img-top.
+       HTML: <img class="card-img-top" src="...">
+       QUÉ HACE: reduce la altura de las imágenes de las tarjetas en pantallas pequeñas. */
+   .card-img-top {
+      height: 220px;
+      /* Reduce la altura de la imagen a 220px. */
+   }
+
+   /* Afecta a las imágenes de los elementos del carrusel.
+       HTML: <div id="carouselExampleIndicators"><div class="carousel-item"><img src="..."></div></div>
+       QUÉ HACE: reduce la altura de las imágenes del carrusel en pantallas pequeñas. */
+   #carouselExampleIndicators .carousel-item img {
+      height: 180px;
+      /* Reduce la altura de la imagen del carrusel a 180px. */
+   }
+}
+
+/* ==========================================
+   BOTONES FLOTANTES DE NAVEGACIÓN
+   ========================================== */
+
+/* Afecta a los elementos con la clase .flechas-navegacion.
+   HTML: <div class="flechas-navegacion">...</div>
+   QUÉ HACE: coloca el contenedor de las flechas fijo en la esquina inferior derecha de la pantalla,
+   mostrando los botones uno debajo de otro. */
+.flechas-navegacion {
+   position: fixed !important;
+   /* Mantiene el contenedor fijo aunque se haga scroll por la página. */
+   right: 20px !important;
+   /* Lo separa 20px del borde derecho de la pantalla. */
+   bottom: 20px !important;
+   /* Lo separa 20px del borde inferior de la pantalla. */
+   display: flex !important;
+   /* Activa Flexbox para organizar los botones. */
+   flex-direction: column !important;
+   /* Coloca los botones verticalmente, uno debajo de otro. */
+   gap: 10px !important;
+   /* Deja 10px de separación entre los botones. */
+   z-index: 9999 !important;
+   /* Coloca el contenedor por encima de otros elementos de la página. */
+}
+
+/* Afecta a los elementos con la clase .btn-flecha.
+   HTML: <button class="btn-flecha">↑</button>
+   QUÉ HACE: crea el aspecto circular de los botones de navegación. */
+.btn-flecha {
+   width: 42px;
+   /* Establece un ancho de 42px. */
+   height: 42px;
+   /* Establece una altura de 42px. */
+   background-color: #222222;
+   /* Establece un fondo gris muy oscuro. */
+   color: #ffffff;
+   /* Establece el color del contenido en blanco. */
+   border: 2px solid #ffffff;
+   /* Añade un borde blanco de 2px. */
+   border-radius: 50%;
+   /* Convierte el botón en circular. */
+   font-size: 16px;
+   /* Establece el tamaño del texto o símbolo en 16px. */
+   cursor: pointer;
+   /* Hace que el cursor cambie para indicar que el botón es interactivo. */
+   display: flex;
+   /* Activa Flexbox dentro del botón. */
+   align-items: center;
+   /* Centra verticalmente el contenido del botón. */
+   justify-content: center;
+   /* Centra horizontalmente el contenido del botón. */
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   /* Añade una sombra alrededor del botón. */
+   transition: background-color 0.3s, transform 0.2s;
+   /* Hace progresivos los cambios de fondo y posición. */
+}
+
+/* Afecta a los botones .btn-flecha cuando el ratón pasa por encima.
+   QUÉ HACE: cambia el color del botón y lo aumenta ligeramente.
+   :hover es un estado CSS. */
+.btn-flecha:hover {
+   background-color: #ff4d00;
+   /* Cambia el fondo a naranja al pasar el ratón por encima. */
+   transform: scale(1.1);
+   /* Aumenta el tamaño del botón un 10% al pasar el ratón por encima. */
+}
+
+/* Afecta a los elementos que tienen simultáneamente las clases .btn-flecha y .d-none.
+   HTML: <button class="btn-flecha d-none">↑</button>
+   QUÉ HACE: oculta el botón cuando tiene la clase .d-none. */
+.btn-flecha.d-none {
+   display: none !important;
+   /* Hace que el botón no se muestre. */
+}
+
+/* ==========================================
+   BOTONES DE COMPRA
+   ========================================== */
+
+/* Afecta a los elementos con la clase .btn-comprar.
+   HTML: <button class="btn-comprar">Comprar</button>
+   QUÉ HACE: establece el aspecto y tamaño de los botones utilizados para comprar productos. */
+.btn-comprar {
+   width: 100%;
+   /* Hace que el botón ocupe todo el ancho disponible. */
+   margin-top: 4px;
+   /* Deja 4px de espacio exterior por encima del botón. */
+   padding: 10px 20px;
+   /* Añade 10px de espacio interior arriba/abajo y 20px a izquierda/derecha. */
+   background-color: #ff4d00;
+   /* Establece el fondo naranja del botón. */
+   color: #fff;
+   /* Establece el color del texto en blanco. */
+   border: none;
+   /* Elimina el borde del botón. */
+   border-radius: 8px;
+   /* Redondea las esquinas del botón 8px. */
+   font-size: 16px;
+   /* Establece el tamaño del texto en 16px. */
+   font-weight: 600;
+   /* Hace que el texto tenga un grosor de 600. */
+   cursor: pointer;
+   /* Indica mediante el cursor que el botón se puede pulsar. */
+   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+   /* Hace progresivos los cambios de color, posición y sombra. */
+}
+
+/* Afecta al botón .btn-comprar cuando el ratón pasa por encima.
+   QUÉ HACE: cambia el color, eleva ligeramente el botón y añade una sombra.
+   :hover es un estado CSS. */
+.btn-comprar:hover {
+   background-color: #e04300;
+   /* Cambia el fondo a un naranja más oscuro al pasar el ratón. */
+   color: #fff;
+   /* Mantiene el texto de color blanco. */
+   transform: translateY(-2px);
+   /* Mueve el botón 2px hacia arriba. */
+   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+   /* Añade una sombra al botón. */
+}
+
+/* Afecta al botón .btn-comprar mientras está siendo pulsado.
+   QUÉ HACE: devuelve el botón a su posición normal y elimina la sombra.
+   :active es un estado CSS que se produce mientras el elemento está siendo pulsado. */
+.btn-comprar:active {
+   transform: translateY(0);
+   /* Devuelve el botón a su posición original. */
+   box-shadow: none;
+   /* Elimina la sombra mientras se pulsa. */
+}
+
+/* ==========================================
+   CONTENIDO DEL MAIN=productos
+   ========================================== */
+.cantidad-producto::-webkit-inner-spin-button,
+.cantidad-producto::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+.cantidad-producto {
+    -moz-appearance: textfield;
+    appearance: none;
+}
+/* Afecta a los elementos <main> que tienen la clase .container.
+   HTML: <main class="container">...</main>
+   QUÉ HACE: añade espacio interior arriba y abajo al contenido principal de las páginas de productos. */
+main.container {
+   padding-top: 20px !important;
+   /* Añade 20px de espacio interior en la parte superior=separación arriba con el carussel */
+   padding-bottom: 20px !important;
+   /* Añade 20px de espacio interior en la parte inferior = separación abajo con el footer. */
+}
+
+/* Afecta a las imágenes .card-img-top que están dentro de un <main class="container">.
+   HTML: <main class="container"><img class="card-img-top" src="..."></main>
+   QUÉ HACE: establece una altura de 200px para las imágenes de las tarjetas de las páginas de productos. */
+main.container .card-img-top {
+   height: 200px;
+   /* Establece la altura de la imagen en 200px. */
+   object-fit: contain;
+   /* Hace que la imagen completa quepa dentro de los 200px. */
+}
+
+/* Afecta a los elementos con la clase .card-body que están dentro de <main class="container">.
+   HTML: <main class="container"><div class="card-body">...</div></main>
+   QUÉ HACE: establece el espacio interior de la zona de contenido de las tarjetas. */
+main.container .card-body {
+   padding: 12px;
+   /* Añade 12px de espacio interior alrededor del contenido de la tarjeta: hace que el contenido de tus tarjetas tenga 12 px de separación interior respecto al borde. */
+}
+
+/* Afecta a los elementos .card-title que están dentro de <main class="container">.
+   HTML: <main class="container"><h5 class="card-title">...</h5></main>
+   QUÉ HACE: reduce el espacio que queda debajo del título. */
+main.container .card-title {
+   margin-bottom: 6px;
+   /* Deja 6px de espacio exterior debajo del título. */
+}
+
+/* Afecta a los elementos .card-text que están dentro de <main class="container">.
+   HTML: <main class="container"><p class="card-text">...</p></main>
+   QUÉ HACE: reduce el espacio que queda debajo del texto de la tarjeta. */
+main.container .card-text {
+   margin-bottom: 8px;
+   /* Deja 8px de espacio exterior debajo del texto. */
+}
+
+/* Afecta a los elementos con la clase .form-select que están dentro de <main class="container">.
+   HTML: <main class="container"><select class="form-select">...</select></main>
+   QUÉ HACE: añade 8px de espacio debajo del selector, por ejemplo, del selector de tallas. */
+main.container .form-select {
+   margin-bottom: 8px !important;
+   /* Deja 8px de espacio exterior debajo del selector. */
+}

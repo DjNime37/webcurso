@@ -1,0 +1,145 @@
+/* Afecta a todos los elementos HTML de la página.
+   QUÉ HACE: aplica una configuración general a todos los elementos, eliminando márgenes y rellenos por defecto y usando la misma fuente. */
+* {
+    box-sizing: border-box; /* Hace que el padding y el borde se incluyan dentro del ancho y alto establecidos del elemento. */
+    margin: 0; /* Elimina los márgenes exteriores que el navegador aplica por defecto. */
+    padding: 0; /* Elimina los espacios interiores que el navegador aplica por defecto. */
+    font-family: Arial, Helvetica, sans-serif; /* Establece Arial como fuente principal y las demás como alternativas. */
+}
+/* Afecta a la etiqueta <body>.
+   HTML: <body>...</body>
+   QUÉ HACE: crea el fondo de la página y centra el contenido del formulario horizontal y verticalmente. */
+body {
+    min-height: 100vh; /* Hace que el body tenga como mínimo la altura completa de la ventana. */
+    background: linear-gradient(135deg, #eef2f7, #dfe8f5); /* Crea un degradado diagonal entre dos colores. */
+    display: flex; /* Activa Flexbox para poder posicionar y centrar el contenido. */
+    justify-content: center; /* Centra horizontalmente el contenido. */
+    align-items: center; /* Centra verticalmente el contenido. */
+    padding: 30px; /* Añade 30px de espacio interior alrededor del contenido. */
+}
+/* Afecta a todas las etiquetas <h1>.
+   HTML: <h1>...</h1>
+   QUÉ HACE: coloca y da formato al título principal del formulario. */
+h1 {
+    position: absolute; /* Permite posicionar el título independientemente del flujo normal de la página. */
+    top: 40px; /* Coloca el título a 40px desde la parte superior. */
+    width: 100%; /* Hace que el título ocupe todo el ancho disponible. */
+    text-align: center; /* Centra horizontalmente el texto. */
+    color: #222; /* Establece el color del texto en gris muy oscuro. */
+    font-size: 32px; /* Establece el tamaño del título en 32px. */
+}
+/* Afecta a todas las etiquetas HTML <form>.
+   HTML: <form>...</form>
+   QUÉ HACE: crea el cuadro principal blanco que contiene los campos del formulario. */
+form {
+    width: 100%; /* Permite que el formulario ocupe todo el ancho disponible hasta su límite máximo. */
+    max-width: 600px; /* Impide que el formulario supere los 600px de ancho. */
+    background: white; /* Establece el fondo blanco del formulario. */
+    padding: 35px; /* Añade 35px de espacio interior alrededor del contenido. */
+    border-radius: 15px; /* Redondea las esquinas del formulario. */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Añade una sombra alrededor del formulario. */
+}
+/* Afecta a todas las etiquetas HTML <label>.
+   HTML: <label for="nombre">Nombre</label>
+   QUÉ HACE: da formato a los textos que identifican los campos del formulario. */
+   label {
+    display: block; /* Hace que cada etiqueta ocupe una línea completa. */
+    margin-top: 18px; /* Añade 18px de espacio encima de la etiqueta. */
+    margin-bottom: 7px; /* Añade 7px de espacio debajo de la etiqueta. */
+    font-weight: bold; /* Muestra el texto de la etiqueta en negrita. */
+    color: #333; /* Establece el color del texto en gris oscuro. */
+}
+/* Afecta a las etiquetas HTML <input> y <select>.
+   HTML: <input ...> y <select>...</select>
+   QUÉ HACE: da un aspecto uniforme a los campos de entrada y al selector. */
+input,
+select {
+    width: 100%; /* Hace que el campo ocupe todo el ancho disponible. */
+    height: 45px; /* Establece una altura de 45px. */
+    padding: 10px 12px; /* Añade 10px de espacio interior vertical y 12px horizontal. */
+    border: 1px solid #ccc; /* Añade un borde gris de 1px. */
+    border-radius: 8px; /* Redondea las esquinas del campo. */
+    font-size: 15px; /* Establece el tamaño del texto en 15px. */
+    background: #fff; /* Establece el fondo blanco. */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Hace progresivos durante 0,2 segundos los cambios del borde y la sombra. */
+}
+/* Afecta a los elementos <input> y <select> cuando están seleccionados o tienen el foco.
+   :focus es un estado CSS que se produce cuando el usuario hace clic en el campo o llega a él mediante el teclado.
+   QUÉ HACE: elimina el contorno predeterminado y muestra un borde y una sombra azul. */
+input:focus,
+select:focus {
+    outline: none; /* Elimina el contorno que el navegador muestra por defecto al seleccionar el campo. */
+    border-color: #2563eb; /* Cambia el borde a color azul. */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); /* Añade una sombra azul suave alrededor del campo. */
+}
+/* Afecta al texto de ejemplo que aparece dentro de los <input>.
+   ::placeholder es un pseudo-elemento CSS.
+   QUÉ HACE: cambia el color del texto de ejemplo de los campos. */
+input::placeholder {
+    color: #999; /* Establece el texto del placeholder en gris. */
+}
+/* --- ESTADOS DE VALIDACIÓN (ACTIVADOS TRAS PULSAR SUBMIT / .validado) --- */
+
+/* Afecta a los <input> y <select> inválidos que están dentro de un <form> con la clase .validado.
+   HTML: <form class="validado"><input required>...</form>
+   :invalid es un estado CSS que se activa cuando el campo no cumple las reglas de validación HTML.
+   QUÉ HACE: marca en rojo únicamente los campos que no cumplen las reglas de validación. */
+form.validado input:invalid,
+form.validado select:invalid {
+    border-color: #dc2626; /* Cambia el borde del campo inválido a rojo. */
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15); /* Añade una sombra roja suave alrededor del campo inválido. */
+}
+/* Afecta a todas las etiquetas HTML <button>.
+   HTML: <button type="submit">...</button>
+   QUÉ HACE: crea el aspecto principal del botón del formulario. */
+button {
+    width: 100%; /* Hace que el botón ocupe todo el ancho disponible. */
+    height: 48px; /* Establece una altura de 48px. */
+    margin-top: 30px; /* Añade 30px de espacio encima del botón. */
+    background: #2563eb; /* Establece el fondo azul del botón. */
+    color: white; /* Establece el texto del botón en blanco. */
+    border: none; /* Elimina el borde del botón. */
+    border-radius: 8px; /* Redondea las esquinas del botón. */
+    font-size: 17px; /* Establece el tamaño del texto en 17px. */
+    font-weight: bold; /* Muestra el texto en negrita. */
+    cursor: pointer; /* Cambia el cursor para indicar que el botón se puede pulsar. */
+    transition: background 0.2s ease; /* Hace progresivo durante 0,2 segundos el cambio del fondo. */
+}
+/* Afecta a los botones <button> cuando el ratón pasa por encima.
+   :hover es un estado CSS.
+   QUÉ HACE: cambia el fondo del botón a un azul más oscuro al pasar el ratón por encima. */
+button:hover {
+    background: #1d4ed8; /* Cambia el fondo a un azul más oscuro al pasar el ratón. */
+}
+/* Afecta a todas las etiquetas HTML <select>.
+   HTML: <select>...</select>
+   QUÉ HACE: indica mediante el cursor que el selector es interactivo. */
+select {
+    cursor: pointer; /* Cambia el cursor para indicar que el selector se puede utilizar. */
+}
+/* Afecta a todos los estilos incluidos dentro de esta regla cuando la pantalla tiene un ancho máximo de 650px.
+   QUÉ HACE: adapta el formulario a móviles y pantallas pequeñas.
+   @media es una regla CSS que permite aplicar estilos según las características de la pantalla. */
+@media (max-width: 650px) {
+    /* Afecta al <body> en pantallas de hasta 650px.
+       QUÉ HACE: reduce el espacio lateral y coloca el contenido comenzando desde la parte superior. */
+    body {
+        padding: 15px; /* Reduce el espacio interior del body de 30px a 15px. */
+        align-items: flex-start; /* Coloca el contenido al principio del eje vertical en lugar de centrarlo. */
+    }
+    /* Afecta al <h1> en pantallas de hasta 650px.
+       QUÉ HACE: devuelve el título al flujo normal de la página y reduce su tamaño. */
+    h1 {
+        position: static; /* Devuelve el título a su posición normal dentro del documento. */
+        margin-bottom: 25px; /* Añade 25px de espacio debajo del título. */
+        font-size: 26px; /* Reduce el tamaño del título a 26px. */
+    }
+    /* Afecta al <form> en pantallas de hasta 650px.
+       QUÉ HACE: reduce el espacio interior del formulario para aprovechar mejor el espacio de la pantalla. */
+    form {
+        padding: 25px; /* Reduce el espacio interior del formulario a 25px. */
+    }
+}
+
+
+
