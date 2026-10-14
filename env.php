@@ -9,5 +9,3 @@ return [
         'password' => ''
     ]
 ];
-
-
